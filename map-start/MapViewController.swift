@@ -10,13 +10,15 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-
   @IBOutlet var mapView: MKMapView!
+
+  let locationManager = CLLocationManager()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
     mapView.delegate = self
+    locationManager.requestWhenInUseAuthorization()
 
     let firstPoint = MKPointAnnotation()
     firstPoint.coordinate = CLLocationCoordinate2D(latitude: 57.53506, longitude: 25.4242)
@@ -26,9 +28,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     mapView.addAnnotation(firstPoint)
     mapView.addAnnotation(secondPoint)
-
-
-
   }
 
   func drawRoute(to: CLLocationCoordinate2D) {
