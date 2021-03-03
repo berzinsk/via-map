@@ -24,10 +24,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     firstPoint.coordinate = CLLocationCoordinate2D(latitude: 57.53506, longitude: 25.4242)
 
     let secondPoint = MKPointAnnotation()
-    secondPoint.coordinate = CLLocationCoordinate2D(latitude: 56.9419, longitude: 24.2300)
+    secondPoint.coordinate = CLLocationCoordinate2D(latitude: 56.5475, longitude: 21.0209)
+
+    let thirdPoint = MKPointAnnotation()
+    thirdPoint.coordinate = CLLocationCoordinate2D(latitude: 57.3862, longitude: 21.5730)
 
     mapView.addAnnotation(firstPoint)
     mapView.addAnnotation(secondPoint)
+    mapView.addAnnotation(thirdPoint)
   }
 
   func drawRoute(to: CLLocationCoordinate2D) {
